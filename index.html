@@ -93,6 +93,23 @@
   <span class="chip cN">Negative result</span>
 </div>
 
+
+<div class="frontmatter" style="border:1px solid var(--rule);padding:14px 20px;border-radius:6px;margin-top:18px">
+  <p style="margin:.2em 0"><b>Reading pathways.</b></p>
+  <p style="margin:.3em 0"><i>The New Observer:</i>
+  <a href="#imm">IMM</a> → <a href="#obsreq">Observer Requirements</a> →
+  <a href="#rpcs1">RPCS-1 Primitives</a> → <a href="#failmodes">Failure Modes</a> →
+  <a href="#tuner">Agent Tuner</a>.</p>
+  <p style="margin:.3em 0"><i>The RH Instrumentation line:</i>
+  <a href="#weil">Weil Positivity</a> → <a href="#himm">H<sub>IMM</sub></a> →
+  <a href="#am">A(m)</a> → <a href="#fingerprints">Two Spectral Fingerprints</a> →
+  <a href="#lichart">The RH Chart</a> → <a href="#eseries">E-Series</a>.</p>
+  <p style="margin:.3em 0"><i>The Skeptic's path:</i>
+  <a href="#retired">Retired &amp; Falsified Claims</a> → <a href="#peq">Projection–Equilibrium
+  Question</a> → <a href="#ledger">Claim Ledger</a> → <a href="#predictions">Predictions
+  Register</a> → any article that still bothers you.</p>
+</div>
+
 <nav class="alphabar">
   <a href="#sec-A">A</a>·<a href="#sec-B">B</a>·<a href="#sec-C">C</a>·<a href="#sec-E">E</a>·<a href="#sec-F">F</a>·<a href="#sec-G">G</a>·<a href="#sec-H">H</a>·<a href="#sec-I">I</a>·<a href="#sec-L">L</a>·<a href="#sec-M">M</a>·<a href="#sec-O">O</a>·<a href="#sec-P">P</a>·<a href="#sec-R">R</a>·<a href="#sec-S">S</a>·<a href="#sec-T">T</a>·<a href="#sec-W">W</a>·<a href="#sec-Y">Y</a>
 </nav>
@@ -120,7 +137,9 @@
   <li><a href="#mlarch">ML Architecture as Receiver Design Pattern</a></li>
   <li><a href="#obsreq">Observer Requirements (Paper 18)</a></li>
   <li><a href="#peq">Projection–Equilibrium Question</a></li>
+  <li><a href="#predictions">Predictions Register</a></li>
   <li><a href="#rps">Regulated-Positivity Schema</a></li>
+  <li><a href="#replication">Replication: How to Participate</a></li>
   <li><a href="#retired">Retired and Falsified Claims</a></li>
   <li><a href="#rpcs1">RPCS-1 Receiver Primitives</a></li>
   <li><a href="#tuner">RPCS-1 Agent Tuner</a></li>
@@ -537,6 +556,29 @@
   <p class="seealso">See also <a href="#rps">Regulated-Positivity Schema</a>;
   <a href="#ym">Yang–Mills Mass Gap</a>; <a href="#retired">Retired and Falsified Claims</a>.</p>
 </article>
+<article id="predictions">
+  <h2>Predictions Register <span class="chips"><span class="chip cO">Aggregated · statuses honest</span></span></h2>
+  <div class="meta">Every falsifiable prediction in the deposited corpus, with its current status. Curated from the papers' own labels; adjudication is human and ledger-governed, never automatic.</div>
+  <table>
+    <tr><th>Prediction</th><th>Source</th><th>Status</th></tr>
+    <tr><td>Cosmic structure growth V₀(t) ∝ t<sup>α</sup>, α ≈ 1.063 (vs ΛCDM, few-% level)</td><td>Paper 6, Pred-06-1</td><td>UNTESTED (SDSS-IV / Euclid / DESI)</td></tr>
+    <tr><td>Born-rule deviation with sign reversal at P<sub>QM</sub> = 1/n; 27-s transmon protocol</td><td>Paper 7, Pred-07-1</td><td>UNTESTED · geometric caveat ⟨F⟩ ≈ 1 unverified</td></tr>
+    <tr><td>Dark-energy analogue with w(z) ≠ −1</td><td>Paper 8, Pred-08-1</td><td>UNTESTED (DESI / Euclid constraints applicable)</td></tr>
+    <tr><td>Five receiver-dynamics predictions (basin structure, comorbidity geometry, …)</td><td>Paper 9, Pred-09-1…5</td><td>UNTESTED · 09-5 (Matching Principle) superseded by the sharper R-1 law family (Paper 18)</td></tr>
+    <tr><td>Passive coherence revival: amplitude ↑ in κ; delay ∼ 1/κ, bath-independent at leading order</td><td>Paper 5, P1–P2</td><td>UNTESTED · Lindblad-impossibility pre-test passed computationally</td></tr>
+    <tr><td>Collective cascade predictions</td><td>Paper 11, Pred-11-1…3</td><td>UNTESTED · qualitative until coupling matrix W specified (paper's own caveat)</td></tr>
+    <tr><td>Transformer failure modes at corresponding receiver coordinates</td><td>Paper 12, Pred-12-1…3</td><td>UNTESTED · Paper 17 battery designs prepared</td></tr>
+    <tr><td>Li vs Toeplitz vs Θ<sub>ω</sub> detection power (planted violations)</td><td>E-LI-1b (pre-registered)</td><td><b>COMPLETED: TOEPLITZ WINS</b> (11/12 cells, all gates passed, 2026-07-15)</td></tr>
+    <tr><td>Θ<sub>ω</sub> detection staircase ε &gt; ω</td><td>E-LI-1b §4 (registered prediction)</td><td><b>FALSIFIED as registered</b>; measured law ε − ω ≥ v (72/72)</td></tr>
+    <tr><td>Abelian/non-abelian lattice discrimination; monopole-channel attribution of the U(1) gap</td><td>Paper 15, E-YM series</td><td>COMPLETED as registered (reported in Paper 15 v3)</td></tr>
+    <tr><td>Market-entity alpha viability</td><td>Working-thread record</td><td><b>NEGATIVE RESULT</b>: not viable at retail cost; verdict published</td></tr>
+  </table>
+  <p>The preponderance of UNTESTED entries is displayed deliberately: a programme's honesty
+  is measured by how plainly it distinguishes what it predicts from what it has shown.</p>
+  <p class="seealso">See also <a href="#eseries">E-Series Protocols</a>;
+  <a href="#retired">Retired and Falsified Claims</a>.</p>
+</article>
+
 
 <div class="letterhead" id="sec-R">R</div>
 
@@ -578,6 +620,25 @@
   suspected of resembling.</p>
   <p class="seealso">See also <a href="#ledger">Claim Ledger</a>; <a href="#eseries">E-Series Protocols</a>.</p>
 </article>
+<article id="replication">
+  <h2>Replication and Falsification: How to Participate <span class="chips"><span class="chip cS">Standing invitation</span></span></h2>
+  <div class="meta">External verification pathway · issue templates in the encyclopedia repository</div>
+  <p class="lede">Every E-series protocol freezes its thresholds, seeds, and gates before data;
+  every instrument repository ships its committed scripts and machine-readable reports. An
+  external replication therefore needs no negotiation: run the committed pipeline (or your
+  own implementation of the registered definitions), compare against the registered
+  thresholds, and file a replication report — pass or fail — via the issue template in the
+  encyclopedia repository. Falsification attempts are explicitly welcome and receive the
+  same treatment as confirmations; a verified external kill would be entered in the
+  <a href="#retired">kill list</a> with the challenger credited as executioner.</p>
+  <p>Statuses in this encyclopedia are never changed by automation. A replication report,
+  internal or external, is adjudicated against the protocol's own gates and deviations
+  policy, and the change is committed with attribution — the git history of this site is
+  the versioned state of the ledger.</p>
+  <p class="seealso">See also <a href="#eseries">E-Series Protocols</a>;
+  <a href="#predictions">Predictions Register</a>.</p>
+</article>
+
 
 <article id="rpcs1">
   <h2>RPCS-1 Receiver Primitives <span class="chips"><span class="chip cT">Overlap Theorem: theorem</span><span class="chip cS">Framework: stable</span></span></h2>
@@ -751,11 +812,117 @@
 
 </main>
 
+<div class="letterhead" id="sec-MAP">CROSS-REFERENCE MAP</div>
+
+<div class="frontmatter" style="max-width:980px">
+  <p><b>The knowledge structure, drawn.</b> Nodes are encyclopedia entries; arrows point from
+  a claim to what it <i>depends on</i>. Colour follows the status legend. Edges are
+  hand-curated from the deposited papers' own status maps — this graph is documentation,
+  not automation. Reading it backwards from any node shows what would need revision if that
+  node fell; the most load-bearing nodes are the ones with the most incoming arrows.
+  Drag nodes; click one to open its article.</p>
+</div>
+<div id="depgraph" style="max-width:980px;margin:0 auto;height:560px;border:1px solid var(--rule);border-radius:6px"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+const NODES = [
+ {id:"Projection axioms (0A)", href:"#lexicon", c:"S"},
+ {id:"Claim Ledger (0B)", href:"#ledger", c:"S"},
+ {id:"Temporal Asymmetry (P1)", href:"#temporal", c:"T"},
+ {id:"Determinacy (P2)", href:"#determinacy", c:"T"},
+ {id:"Lorentzian Signature (P3)", href:"#lorentz", c:"C"},
+ {id:"Quadratic Measure (P4·S1)", href:"#born", c:"T"},
+ {id:"Hilbert Embeddability Ansatz", href:"#born", c:"C"},
+ {id:"Born Rule (P4·S2)", href:"#born", c:"C"},
+ {id:"Born Deviation Test (P7)", href:"#borndev", c:"O"},
+ {id:"Master Action Ansatz (P8)", href:"#gravity", c:"C"},
+ {id:"Gravity as Pushforward (P8)", href:"#gravity", c:"S"},
+ {id:"RPCS-1 Primitives (P9)", href:"#rpcs1", c:"S"},
+ {id:"V(R,E) Ansatz (A-09-1)", href:"#rpcs1", c:"C"},
+ {id:"Collective Dynamics (P11)", href:"#collective", c:"C"},
+ {id:"ML Architecture (P12)", href:"#mlarch", c:"C"},
+ {id:"Observer Requirements (P18)", href:"#obsreq", c:"S"},
+ {id:"E-OR Chart", href:"#eor", c:"S"},
+ {id:"H_IMM Operator (P13)", href:"#himm", c:"F"},
+ {id:"Weil Positivity (open)", href:"#weil", c:"O"},
+ {id:"A(m) Toeplitz (P14)", href:"#am", c:"S"},
+ {id:"Fingerprints (Stieltjes)", href:"#fingerprints", c:"C"},
+ {id:"RH Chart (P19)", href:"#lichart", c:"S"},
+ {id:"E-LI-1b verdict", href:"#eseries", c:"T"},
+ {id:"Yang-Mills (P15)", href:"#ym", c:"O"},
+ {id:"Proj-Equilibrium null (P16)", href:"#peq", c:"N"},
+ {id:"Regulated-Positivity Schema", href:"#rps", c:"C"},
+ {id:"Agent Tuner (rpcs1.dev)", href:"#tuner", c:"S"}
+];
+const LINKS = [
+ ["Temporal Asymmetry (P1)","Projection axioms (0A)"],
+ ["Determinacy (P2)","Projection axioms (0A)"],
+ ["Lorentzian Signature (P3)","Projection axioms (0A)"],
+ ["Quadratic Measure (P4·S1)","Projection axioms (0A)"],
+ ["Born Rule (P4·S2)","Quadratic Measure (P4·S1)"],
+ ["Born Rule (P4·S2)","Hilbert Embeddability Ansatz"],
+ ["Born Deviation Test (P7)","Lorentzian Signature (P3)"],
+ ["Born Deviation Test (P7)","Born Rule (P4·S2)"],
+ ["Gravity as Pushforward (P8)","Master Action Ansatz (P8)"],
+ ["Gravity as Pushforward (P8)","Lorentzian Signature (P3)"],
+ ["RPCS-1 Primitives (P9)","V(R,E) Ansatz (A-09-1)"],
+ ["Collective Dynamics (P11)","RPCS-1 Primitives (P9)"],
+ ["ML Architecture (P12)","RPCS-1 Primitives (P9)"],
+ ["Observer Requirements (P18)","RPCS-1 Primitives (P9)"],
+ ["E-OR Chart","Observer Requirements (P18)"],
+ ["Agent Tuner (rpcs1.dev)","RPCS-1 Primitives (P9)"],
+ ["Agent Tuner (rpcs1.dev)","Observer Requirements (P18)"],
+ ["H_IMM Operator (P13)","Projection axioms (0A)"],
+ ["A(m) Toeplitz (P14)","Weil Positivity (open)"],
+ ["Fingerprints (Stieltjes)","Weil Positivity (open)"],
+ ["RH Chart (P19)","A(m) Toeplitz (P14)"],
+ ["RH Chart (P19)","Fingerprints (Stieltjes)"],
+ ["E-LI-1b verdict","A(m) Toeplitz (P14)"],
+ ["E-LI-1b verdict","RH Chart (P19)"],
+ ["Regulated-Positivity Schema","Weil Positivity (open)"],
+ ["Regulated-Positivity Schema","Yang-Mills (P15)"],
+ ["Proj-Equilibrium null (P16)","Regulated-Positivity Schema"],
+ ["Yang-Mills (P15)","Projection axioms (0A)"]
+];
+const COL = {T:"#2c5a2e", S:"#14406e", C:"#7a5a12", O:"#777", F:"#8c2f28", N:"#5a3b7a"};
+const el = document.getElementById("depgraph");
+const W = el.clientWidth, H = 560;
+const svg = d3.select("#depgraph").append("svg").attr("width","100%").attr("height",H)
+  .attr("viewBox",[0,0,W,H]);
+svg.append("defs").append("marker").attr("id","arr").attr("viewBox","0 -4 8 8")
+  .attr("refX",16).attr("markerWidth",7).attr("markerHeight",7).attr("orient","auto")
+  .append("path").attr("d","M0,-3L7,0L0,3").attr("fill","#b9b4aa");
+const links = LINKS.map(([s,t])=>({source:s,target:t}));
+const sim = d3.forceSimulation(NODES)
+  .force("link", d3.forceLink(links).id(d=>d.id).distance(95))
+  .force("charge", d3.forceManyBody().strength(-320))
+  .force("center", d3.forceCenter(W/2,H/2))
+  .force("collide", d3.forceCollide(34));
+const link = svg.append("g").selectAll("line").data(links).join("line")
+  .attr("stroke","#cfc9bf").attr("stroke-width",1.1).attr("marker-end","url(#arr)");
+const node = svg.append("g").selectAll("g").data(NODES).join("g")
+  .style("cursor","pointer")
+  .call(d3.drag().on("start",(e,d)=>{if(!e.active)sim.alphaTarget(.25).restart();d.fx=d.x;d.fy=d.y;})
+    .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y;})
+    .on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null;}))
+  .on("click",(e,d)=>{location.hash=d.href;});
+node.append("circle").attr("r",7).attr("fill",d=>COL[d.c]).attr("stroke","#fff").attr("stroke-width",1.5);
+node.append("text").text(d=>d.id).attr("x",10).attr("y",4)
+  .style("font-family","Inter,sans-serif").style("font-size","10.5px").style("fill","#444");
+sim.on("tick",()=>{
+  link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y)
+      .attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
+  node.attr("transform",d=>`translate(${Math.max(8,Math.min(W-8,d.x))},${Math.max(8,Math.min(H-8,d.y))})`);
+});
+</script>
+
+
 <div class="foot">
   THE IMM ENCYCLOPEDIA · First edition, 16 July 2026 · Entries follow the status vocabulary of
   Paper 0B (Claim Ledger) · Series concept DOI 10.5281/zenodo.19697792 · Live instruments:
   <a href="https://travisbergen2.github.io/rh-smith-chart/" target="_blank" rel="noopener noreferrer">the RH Smith Chart</a> ·
-  rpcs1.dev · Errors in these entries are themselves ledgerable: corrections welcome.
+  rpcs1.dev · This site is versioned in git — every edition is a commit; the <a href="https://github.com/travisbergen2/IMM_encyclopedia/commits/main" target="_blank" rel="noopener noreferrer">commit history</a> is the audit trail. Errors in these entries are themselves ledgerable: corrections welcome via the <a href="https://github.com/travisbergen2/IMM_encyclopedia/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>.
 </div>
 
 </body>
