@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The IMM Encyclopedia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141414; --paper:#ffffff; --rule:#d8d5cf; 
+    --dim:#6f6a61; --accent:#14406e; --serif:'Source Serif 4',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+       font-size:17px;line-height:1.62;padding:0 6%}
+  .masthead{max-width:980px;margin:0 auto;padding:44px 0 18px;text-align:center;
+    border-bottom:3px double var(--ink)}
+  .masthead .over{font-family:var(--sans);font-size:11px;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--dim)}
+  .masthead h1{font-size:clamp(34px,5vw,54px);margin:.18em 0 .1em;font-weight:700;
+    letter-spacing:.01em}
+  .masthead .under{font-style:italic;color:var(--dim);font-size:16px}
+  .frontmatter{max-width:760px;margin:26px auto 8px;font-size:16.5px}
+  .frontmatter p{margin:.7em 0}
+  .legend{max-width:760px;margin:14px auto 6px;font-family:var(--sans);font-size:12px;
+    color:var(--dim);display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .chip{display:inline-block;padding:2px 9px;border-radius:3px;font-weight:600;
+    letter-spacing:.04em;font-size:10.5px;text-transform:uppercase}
+  .cT{background:#e7efe4;color:#2c5a2e;border:1px solid #b9cfb6}
+  .cS{background:#e8eef7;color:#14406e;border:1px solid #bccbe0}
+  .cC{background:#f6efdd;color:#7a5a12;border:1px solid #ddcda2}
+  .cO{background:#f2f2f2;color:#555;border:1px solid #ccc}
+  .cF{background:#f9e6e4;color:#8c2f28;border:1px solid #e0b6b1}
+  .cN{background:#efe8f5;color:#5a3b7a;border:1px solid #cdbadf}
+  .alphabar{max-width:980px;margin:20px auto 6px;text-align:center;
+    font-family:var(--sans);font-size:13px;letter-spacing:.12em;color:var(--dim);
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:9px 0}
+  .alphabar a{color:var(--accent);text-decoration:none;margin:0 5px;font-weight:600}
+  .toc{max-width:760px;margin:16px auto 8px;column-count:2;column-gap:36px;
+    font-size:15px}
+  @media(max-width:700px){.toc{column-count:1}}
+  .toc a{color:var(--accent);text-decoration:none}
+  .toc li{margin:3px 0}
+  main{max-width:760px;margin:0 auto;padding-bottom:80px}
+  .letterhead{font-family:var(--sans);font-size:13px;letter-spacing:.3em;
+    color:var(--dim);border-bottom:1px solid var(--rule);margin:46px 0 6px;
+    padding-bottom:4px}
+  article{margin:30px 0 34px}
+  article h2{font-size:24px;margin:0 0 2px;font-weight:700}
+  article h2 .chips{margin-left:10px;vertical-align:3px}
+  .meta{font-family:var(--sans);font-size:12px;color:var(--dim);margin-bottom:8px}
+  article p{margin:.65em 0;text-align:justify;hyphens:auto}
+  .lede::first-letter{font-size:1.15em;font-weight:600}
+  .seealso{font-style:italic;color:var(--dim);font-size:15.5px;margin-top:8px}
+  .seealso a{color:var(--accent)}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin:12px 0;
+    font-family:var(--sans)}
+  th,td{padding:7px 9px;border-bottom:1px solid var(--rule);text-align:left;
+    vertical-align:top;line-height:1.45}
+  th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+  .foot{max-width:760px;margin:40px auto 0;border-top:3px double var(--ink);
+    padding:16px 0 50px;font-family:var(--sans);font-size:12.5px;color:var(--dim);
+    line-height:1.7;text-align:center}
+  a{color:var(--accent)}
+  code{font-family:ui-monospace,monospace;font-size:.88em;background:#f4f2ee;
+    padding:1px 5px;border-radius:3px}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="over">A Reference Work of the Information Manifold Model Research Programme</div>
+  <h1>The IMM Encyclopedia</h1>
+  <div class="under">Entries at earned epistemic grade · First edition, July 2026 · T. Bergen</div>
+</header>
+
+<div class="frontmatter">
+  <p><b>How to read this encyclopedia.</b> Every article carries a status chip drawn from the
+  programme's Claim Ledger (Paper 0B). Nothing in these pages claims more than its derivation
+  supports: theorems are marked as theorems, conjectures as conjectures, and a standing article
+  is devoted to <a href="#retired">claims the programme itself has killed</a>. The reader who
+  wishes to test whether this discipline is real should start there.</p>
+</div>
+
+<div class="legend">
+  <span class="chip cT">Theorem / Established</span>
+  <span class="chip cS">Stable</span>
+  <span class="chip cC">Conjecture / Hypothesis</span>
+  <span class="chip cO">Open / Design-stage</span>
+  <span class="chip cF">Falsified / Retracted</span>
+  <span class="chip cN">Negative result</span>
+</div>
+
+<nav class="alphabar">
+  <a href="#sec-A">A</a>·<a href="#sec-C">C</a>·<a href="#sec-E">E</a>·<a href="#sec-F">F</a>·<a href="#sec-H">H</a>·<a href="#sec-I">I</a>·<a href="#sec-L">L</a>·<a href="#sec-M">M</a>·<a href="#sec-O">O</a>·<a href="#sec-R">R</a>·<a href="#sec-S">S</a>·<a href="#sec-T">T</a>·<a href="#sec-W">W</a>·<a href="#sec-Y">Y</a>
+</nav>
+
+<ol class="toc">
+  <li><a href="#am">A(m) Toeplitz Sequence</a></li>
+  <li><a href="#ledger">Claim Ledger</a></li>
+  <li><a href="#eor">E-OR Environment Chart</a></li>
+  <li><a href="#eseries">E-Series Protocols</a></li>
+  <li><a href="#failmodes">Failure Modes, the Four</a></li>
+  <li><a href="#himm">H<sub>IMM</sub> Operator</a></li>
+  <li><a href="#imm">Information Manifold Model</a></li>
+  <li><a href="#lexicon">Lexicon</a></li>
+  <li><a href="#lichart">Li Criterion and the RH Chart</a></li>
+  <li><a href="#market">Market Entity (negative result)</a></li>
+  <li><a href="#matching">Matching Principle</a></li>
+  <li><a href="#batteries">Measurement Batteries</a></li>
+  <li><a href="#obsreq">Observer Requirements</a></li>
+  <li><a href="#rps">Regulated-Positivity Schema</a></li>
+  <li><a href="#retired">Retired and Falsified Claims</a></li>
+  <li><a href="#rpcs1">RPCS-1 Receiver Primitives</a></li>
+  <li><a href="#tuner">RPCS-1 Agent Tuner</a></li>
+  <li><a href="#theta">Θ<sub>ω</sub> Inner-Function Gauge</a></li>
+  <li><a href="#weil">Weil Positivity</a></li>
+  <li><a href="#ym">Yang–Mills Mass Gap (Paper 15)</a></li>
+</ol>
+
+<main>
+
+<div class="letterhead" id="sec-A">A</div>
+
+<article id="am">
+  <h2>A(m) Toeplitz Sequence <span class="chips"><span class="chip cS">Stable</span><span class="chip cC">Equivalence: conjecture-grade</span></span></h2>
+  <div class="meta">Paper 14, “The Truncated Weil Form as a Toeplitz Sequence” · doi:10.5281/zenodo.20684022</div>
+  <p class="lede">A re-coordinatization of the Weil explicit formula in a box basis at scale δ,
+  producing a real sequence A(m) = POLE(m) − PRIME(m) + ARCH(m) whose Toeplitz matrices
+  T<sub>M</sub> = [A(i−j)] encode the Riemann Hypothesis: RH holds if and only if
+  T<sub>M</sub> ⪰ 0 for every size and every scale (equivalence via Weil's criterion in box
+  coordinates, held at the paper's stated conjecture grade C-14-1). Positive-definite Toeplitz
+  sequences are precisely Fourier coefficients of positive measures on the circle
+  (Herglotz–Carathéodory–Toeplitz), making A(m) intrinsically a circle-side object.</p>
+  <p>In the pre-registered comparison E-LI-1b the A(m) gauge proved decisively the most
+  sensitive violation detector among the programme's three circle-side meters, resolving 11 of
+  12 planted-violation cells, each by genuine indefiniteness (μ<sub>min</sub> &lt; 0). A
+  one-character erratum (δ² → δ in the printed tent transform) and an implicit windowing
+  convention (M = w/δ) were identified during reproduction and are recorded against the paper.</p>
+  <p class="seealso">See also <a href="#lichart">Li Criterion and the RH Chart</a>;
+  <a href="#eseries">E-Series Protocols</a>; <a href="#weil">Weil Positivity</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-C">C</div>
+
+<article id="ledger">
+  <h2>Claim Ledger <span class="chips"><span class="chip cS">Stable · methodological</span></span></h2>
+  <div class="meta">Paper 0B · the programme's central epistemic instrument</div>
+  <p class="lede">A published register assigning every load-bearing claim in the corpus one of
+  the statuses STABLE, REVISE, OPEN, FALSIFIED, WITHDRAWN, UNTESTED, or CONFIRMED, together
+  with the conditions under which the claim would fail. The ledger's governing maxim —
+  <i>no claim exceeds its derivation</i> — binds all subsequent papers, and every article in
+  this encyclopedia inherits its chip from the ledger's vocabulary.</p>
+  <p>The ledger is what distinguishes the corpus from the genre it superficially resembles:
+  claims here are killable, and several have been killed by the programme's own instruments
+  (<i>see</i> <a href="#retired">Retired and Falsified Claims</a>). A full paper-by-paper audit
+  against the ledger's own labels was conducted in July 2026 and is maintained as a living
+  document.</p>
+  <p class="seealso">See also <a href="#lexicon">Lexicon</a>; <a href="#eseries">E-Series Protocols</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-E">E</div>
+
+<article id="eor">
+  <h2>E-OR Environment Chart <span class="chips"><span class="chip cS">Stable · draft-conditional</span></span></h2>
+  <div class="meta">E-OR v0.1, “The Derived Environment” · supersedes Paper 12's E = (H, P)</div>
+  <p class="lede">The minimal coordinate chart for the environment of a bounded
+  estimator–actor, derived by reading the Observer Requirements backwards: six coordinates
+  (statistical scale S, operational change rate ν, signal quality Q, stakes Σ, with feedback
+  β and commitment cost 𝒞 as known inputs) shown sufficient (E-OR-1) and minimal (E-OR-2) for
+  the receiver's control problem. Adopted with change rate ν as the primitive variable and
+  entropy demoted to a proxy (decision memo A-OR-5).</p>
+  <p class="seealso">See also <a href="#obsreq">Observer Requirements</a>;
+  <a href="#matching">Matching Principle</a>; <a href="#rpcs1">RPCS-1 Receiver Primitives</a>.</p>
+</article>
+
+<article id="eseries">
+  <h2>E-Series Protocols <span class="chips"><span class="chip cS">Stable · methodological</span></span></h2>
+  <div class="meta">The programme's pre-registration discipline for numerical experiments</div>
+  <p class="lede">Every computational experiment in the programme is registered before data
+  generation: hypotheses, pass/fail thresholds, an underpowered/inconclusive clause, validity
+  gates that block reporting, evidential asymmetry, and firewalled development seeds are all
+  frozen in a protocol document; deviations must be logged with reasons before the deviating
+  computation runs, and repairs occur only through labelled re-registration. Negative and
+  inconclusive verdicts are reported at the same prominence as wins.</p>
+  <table>
+    <tr><th>Protocol</th><th>Question</th><th>Registered verdict</th></tr>
+    <tr><td>E-SOL-1 / 1b / 1c</td><td>Do propagating “solitons” exist in cross-asset market data?</td><td>1: pipeline failure at gate G1; 1b: re-registered; 1c: null-calibrated redesign (design stage)</td></tr>
+    <tr><td>E-OVL-1</td><td>Chart-based vs autocorrelation-only stand-down overlay</td><td>Registered; design stage</td></tr>
+    <tr><td>E-F1-1…4</td><td>Chart-informed vs black-box adaptation in a racing testbed</td><td>Sequence of runs incl. a repair (SG-v2) forced by a measured defect</td></tr>
+    <tr><td>E-LI-1</td><td>Li vs Toeplitz detection power</td><td>INCONCLUSIVE — UNDERPOWERED (R = 6/15); four design defects identified post-hoc</td></tr>
+    <tr><td>E-LI-1b</td><td>Re-registered with mass-matched nulls, powered grid, Θ<sub>ω</sub> arm</td><td><b>TOEPLITZ WINS</b> (11/12 resolved, all gates passed)</td></tr>
+    <tr><td>E-SCHEMA-1</td><td>Test of the regulated-positivity schema</td><td>Registered; design stage</td></tr>
+    <tr><td>ISO-2</td><td>Cross-substrate isomorphism in rebuilt coordinates</td><td>Registered; design stage</td></tr>
+  </table>
+  <p class="seealso">See also <a href="#ledger">Claim Ledger</a>;
+  <a href="#retired">Retired and Falsified Claims</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-F">F</div>
+
+<article id="failmodes">
+  <h2>Failure Modes, the Four <span class="chips"><span class="chip cT">Theorem (11-2), at its stated scope</span></span></h2>
+  <div class="meta">Paper 11 · Overload, Oscillation, Rigidity, Underdetermination</div>
+  <p class="lede">Theorem 11-2 classifies the failure regimes of a bounded receiver into four:
+  <b>Overload</b> (input rate exceeds integration capacity), <b>Oscillation</b> (update gain
+  too high; the receiver chases noise), <b>Rigidity</b> or freeze (update gain too low; the
+  receiver stops responding), and <b>Underdetermination</b> (evidence insufficient to select
+  among actions). The taxonomy underwrites the applied tooling: the RPCS-1 Agent Tuner
+  positions itself against oscillation, overload, and freeze in production language systems.</p>
+  <p class="seealso">See also <a href="#rpcs1">RPCS-1 Receiver Primitives</a>;
+  <a href="#tuner">RPCS-1 Agent Tuner</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-H">H</div>
+
+<article id="himm">
+  <h2>H<sub>IMM</sub> Operator <span class="chips"><span class="chip cF">Core spectral claims retired</span><span class="chip cO">Successor question open</span></span></h2>
+  <div class="meta">Paper 13, “Birman–Schwinger route to RH” · v3</div>
+  <p class="lede">A proposed spectral operator H<sub>IMM</sub> = H₀ + V<sub>ren</sub> with
+  V<sub>ren</sub>(y) = Σ<sub>p≤P</sub>(cos(y log p) − 1)/p, later extended to a
+  det₂-regularized adelic Witten operator, intended to realize the Hilbert–Pólya picture.
+  Independent verification retired its load-bearing numerics: the paper's prime-sum constant
+  (2.636) is in error (the true value over p ≤ 199 is 1.949); the operator's spectral shift
+  function is a dense free-level staircase that does not pin zeta zeros; and the proposed
+  correction knobs were inert (<i>see</i> <a href="#retired">Retired and Falsified Claims</a>).</p>
+  <p>Two genuine residues survive the audit: the adelic generator H<sub>A</sub> on
+  L²(C<sub>ℚ</sub>) is self-adjoint by Stone's theorem — closing the paper's “Open Problem
+  4.4” — but its full-space spectrum is all of ℝ, not the zeros; and the honestly open
+  RH-equivalent statement is Weil positivity on the cokernel of the fibre-summation map, which
+  the programme now approaches as instrumentation rather than proof.</p>
+  <p class="seealso">See also <a href="#weil">Weil Positivity</a>; <a href="#am">A(m) Toeplitz
+  Sequence</a>; <a href="#retired">Retired and Falsified Claims</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-I">I</div>
+
+<article id="imm">
+  <h2>Information Manifold Model (IMM) <span class="chips"><span class="chip cS">Programme · open series</span></span></h2>
+  <div class="meta">T. Bergen, 2025– · Zenodo concept doi:10.5281/zenodo.19697792 · open-ended paper series</div>
+  <p class="lede">A structural research programme spanning quantum foundations, gravitation,
+  receiver dynamics, and number-theoretic instrumentation, published as an open-ended numbered
+  series with three foundation documents: a locked vocabulary (Paper 0A), a public claim
+  ledger (Paper 0B), and a positioning paper situating the framework against rivals — QBism,
+  integrated information theory, active inference, predictive processing — including explicit
+  statements of where IMM has <i>not</i> earned its position (Paper 0C).</p>
+  <p>The programme's distinguishing commitment is procedural rather than doctrinal: claims are
+  graded, experiments are pre-registered, failures are published, and the series is explicitly
+  labelled open — numbering reflects an ongoing, converging process, not a finished system.
+  Its strongest current assets are the receiver-dynamics line (Papers 9–11, 17, and the
+  Observer Requirements rebuild), which ships as working software, and the number-theoretic
+  instrumentation line (Papers 13, 14, 18 and the E-LI experiments), which maintains an
+  explicit “instrument, not proof” stance toward the Riemann Hypothesis.</p>
+  <p class="seealso">See also <a href="#ledger">Claim Ledger</a>; <a href="#obsreq">Observer
+  Requirements</a>; <a href="#lichart">Li Criterion and the RH Chart</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-L">L</div>
+
+<article id="lexicon">
+  <h2>Lexicon <span class="chips"><span class="chip cS">Stable · foundational</span></span></h2>
+  <div class="meta">Paper 0A, “Lexical Foundations”</div>
+  <p class="lede">The controlled vocabulary of the programme. Paper 0A locks the meaning of
+  every technical term before it is used in a claim, so that later papers cannot drift a
+  definition to rescue a result. Amendments are versioned (most recently the A-OR-5 adoption
+  of operational change rate ν as the primitive environment variable, demoting entropy to a
+  proxy). The lexicon and the <a href="#ledger">Claim Ledger</a> jointly form the programme's
+  meta-layer.</p>
+  <p class="seealso">See also <a href="#ledger">Claim Ledger</a>; <a href="#matching">Matching Principle</a>.</p>
+</article>
+
+<article id="lichart">
+  <h2>Li Criterion and the RH Chart <span class="chips"><span class="chip cT">Maps: theorem-grade</span><span class="chip cS">Instrument: shipped</span></span></h2>
+  <div class="meta">Paper 18, “A Smith Chart for the Riemann Hypothesis” · live instrument at travisbergen2.github.io/rh-smith-chart</div>
+  <p class="lede">Li's criterion (1997) rests on the Möbius map z = 1 − 1/s, which sends the
+  critical line to the unit circle: RH is exactly the statement that every nontrivial zero's
+  image lies on the rim, and the Li coefficients λ<sub>n</sub> = Σ(1 − z<sub>ρ</sub><sup>n</sup>)
+  are power sums of the charted zeros. Paper 18 assembles this with the classical Smith chart
+  of radio-frequency engineering — the identical Cayley fold of positive-real impedances into
+  the disk — into a graded dictionary and a working, tested instrument with three positivity
+  meters (λ<sub>n</sub>, the <a href="#am">A(m) Toeplitz gauge</a>, and the
+  <a href="#theta">Θ<sub>ω</sub> inner-function gauge</a>), a planted-violation demonstrator,
+  and a VNA-style swept-trace mode.</p>
+  <p>The paper's own framing is binding: the chart proves nothing about RH; the underlying
+  mathematics (Möbius geometry, Herglotz functions, de Branges canonical systems, Suzuki's
+  Hamiltonian-positivity criterion) is standard and credited; the contribution is assembly
+  and instrumentation. Its one structural identity: the chart is not an illustration of the
+  Li criterion but its state space.</p>
+  <p class="seealso">See also <a href="#am">A(m) Toeplitz Sequence</a>;
+  <a href="#theta">Θ<sub>ω</sub> Inner-Function Gauge</a>; <a href="#weil">Weil Positivity</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-M">M</div>
+
+<article id="market">
+  <h2>Market Entity <span class="chips"><span class="chip cN">Negative result · published as such</span></span></h2>
+  <div class="meta">Paper 12 applications · prototypes v1–v3 · verdict recorded 2026</div>
+  <p class="lede">An attempt to instantiate the RPCS-1 receiver as an autonomous trading agent
+  — a predict–act–compare–recalibrate loop with the five primitives given operational trading
+  meanings (integration as evidence bar, thresholding as detection gate, gain as position
+  size, updating as learning rate, anticipation as directional call). The final prototype
+  discriminated predictable from dead regimes (2.6× trade-rate separation) and still lost
+  money: the detectable edge (~1–2 bp/bar) is thinner than realistic costs plus detection
+  lag, and the breakeven autocorrelation (φ ≈ 0.40 at retail cost) does not occur in liquid
+  markets.</p>
+  <p>The programme's recorded verdict is deliberately blunt: not viable as an alpha engine at
+  retail cost; residual value, if any, as a risk stand-down overlay — a question that was then
+  itself pre-registered (E-OVL-1) rather than assumed. The entry stands in this encyclopedia
+  because published negative results are the cheapest available proof that the grading system
+  is real.</p>
+  <p class="seealso">See also <a href="#eseries">E-Series Protocols</a>;
+  <a href="#rpcs1">RPCS-1 Receiver Primitives</a>.</p>
+</article>
+
+<article id="matching">
+  <h2>Matching Principle <span class="chips"><span class="chip cC">Prediction family · revised</span></span></h2>
+  <div class="meta">Paper 9, Pred-09-5 → Pred-09-6a/6b under the A-OR-5 revision</div>
+  <p class="lede">The programme's flagship receiver-environment law: a well-adapted receiver's
+  temporal integration matches the reciprocal of its environment's rate of change (originally
+  stated as TI ≈ 1/H against entropy; revised to the operational change rate ν as primitive,
+  with the entropy form retained as a proxy prediction). Superseded in sharpness by the
+  Observer Requirements result R-1, which derives the matching laws as bias–variance optima
+  under explicit drift models, yielding a falsifiable family rather than a slogan.</p>
+  <p class="seealso">See also <a href="#obsreq">Observer Requirements</a>;
+  <a href="#eor">E-OR Environment Chart</a>.</p>
+</article>
+
+<article id="batteries">
+  <h2>Measurement Batteries <span class="chips"><span class="chip cS">Bio: stable design</span><span class="chip cO">LLM: design-stage</span></span></h2>
+  <div class="meta">Paper 10 (biological) · Paper 17 (language models)</div>
+  <p class="lede">Two operationalizations of the five receiver primitives as measurement
+  instruments. Paper 10 specifies a biological assay battery (n-back, psychophysical
+  staircases, Stroop, reversal learning, ambiguous percepts) with scoring onto [0,100],
+  reliability and failure fields, and an identifiability result whose scope is explicitly
+  biological-only. Paper 17 mirrors the battery for language-model agents; its four sharpest
+  test designs (TI/UE dissociation, epistemic/pragmatic split, ridge covariation, commitment
+  urgency) are held at design stage with pre-registration templates prepared.</p>
+  <p class="seealso">See also <a href="#rpcs1">RPCS-1 Receiver Primitives</a>;
+  <a href="#eseries">E-Series Protocols</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-O">O</div>
+
+<article id="obsreq">
+  <h2>Observer Requirements <span class="chips"><span class="chip cS">Rebuild foundation · assumptions labelled</span></span></h2>
+  <div class="meta">Observer Requirements v0.1 · R-1 through R-5</div>
+  <p class="lede">The programme's rebuilt foundation for receiver dynamics: rather than
+  postulating the five primitives, the document derives them as the forced control knobs of
+  any bounded estimator–actor, each with optimal-setting laws obtained from standard
+  optimality theory (the first registered result, R-1, derives temporal-integration matching
+  laws under three drift models). Reading the requirements backwards yields the
+  <a href="#eor">E-OR environment chart</a>. The rebuild supersedes earlier slogan-grade
+  statements with derivations whose assumptions are labelled inline.</p>
+  <p class="seealso">See also <a href="#matching">Matching Principle</a>;
+  <a href="#rpcs1">RPCS-1 Receiver Primitives</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-R">R</div>
+
+<article id="rps">
+  <h2>Regulated-Positivity Schema <span class="chips"><span class="chip cC">Hypothesis · must beat rivals</span></span></h2>
+  <div class="meta">Formal note, 2026 · registered test E-SCHEMA-1 (design stage)</div>
+  <p class="lede">The observation that two Millennium-grade open problems share a template:
+  a positivity-through-involution datum whose reconstruction half is unconditional and
+  standard (credited), with Osterwalder–Schrader/Yang–Mills and Weil/RH as instances — both
+  conjectures being the statement that positivity survives removal of a regulator. Held
+  explicitly at hypothesis grade: the framing must outperform the rival explanations
+  (tool-selection and structural universality) under the registered schema test before any
+  stronger claim is permitted, and no new mathematical consequence is claimed to follow from
+  the observation.</p>
+  <p class="seealso">See also <a href="#weil">Weil Positivity</a>;
+  <a href="#ym">Yang–Mills Mass Gap</a>.</p>
+</article>
+
+<article id="retired">
+  <h2>Retired and Falsified Claims <span class="chips"><span class="chip cF">The kill list</span></span></h2>
+  <div class="meta">Maintained under Paper 0B discipline; each entry names its executioner</div>
+  <p class="lede">The programme's most important article. Each item below was a live claim or
+  promising device inside the corpus, and each was killed by the programme's own verification
+  instruments — recomputation, control tests, or pre-registered gates.</p>
+  <table>
+    <tr><th>Claim</th><th>How it died</th></tr>
+    <tr><td>Paper 13's prime-sum constant (2.636)</td><td>Recomputation: the true value over p ≤ 199 is 1.949</td></tr>
+    <tr><td>H<sub>IMM</sub> spectral-shift zero-pinning</td><td>The SSF is a dense free-level staircase; it pins nothing</td></tr>
+    <tr><td>The E6 “epsilon knob”</td><td>A rigid global energy shift; KS-test indistinguishable from random energies</td></tr>
+    <tr><td>Wieferich-prime injection (1093, 3511)</td><td>Inert under direct test</td></tr>
+    <tr><td>“Bernoulli's conjecture”</td><td>Does not exist in the corpus; the citation dissolved on inspection</td></tr>
+    <tr><td>Hermite–Hankel conditioning advantage</td><td>Retracted: a scaling artifact; its repair became a permanent gate (G3) in later protocols</td></tr>
+    <tr><td>E-SOL-1 soliton detector</td><td>Failed its own reproduction gate G1; redesigned twice under re-registration</td></tr>
+    <tr><td>E-LI-1's five γ ≈ 14 “detections”</td><td>Mass artifacts exposed by an ε→0 control the protocol itself demanded</td></tr>
+    <tr><td>Market entity as alpha engine</td><td>Loses after realistic costs at any plausible autocorrelation; verdict published</td></tr>
+  </table>
+  <p>A reader who wants a one-paragraph credibility test of this programme is invited to
+  compare the length of this article with the corresponding article in any work it is
+  suspected of resembling.</p>
+  <p class="seealso">See also <a href="#ledger">Claim Ledger</a>; <a href="#eseries">E-Series Protocols</a>.</p>
+</article>
+
+<article id="rpcs1">
+  <h2>RPCS-1 Receiver Primitives <span class="chips"><span class="chip cS">Stable core</span><span class="chip cC">Transformer identifiability: conjecture</span></span></h2>
+  <div class="meta">Paper 9 · primitives TI, SG, FT, UE, AR · Theorem 11-1</div>
+  <p class="lede">The five control knobs of a bounded receiver: <b>TI</b> (temporal
+  integration — how much evidence is accumulated), <b>SG</b> (signal gain — how strongly a
+  detected signal is amplified), <b>FT</b> (filter threshold — how much pressure a signal
+  needs to be noticed), <b>UE</b> (update elasticity — willingness to change one's model), and
+  <b>AR</b> (anticipatory reach). Theorem 11-1 states that any bounded observer implements
+  the five; the conjecture that they appear as identifiable dimensions in large transformer
+  models (Conj-11-1) remains open and is the target of the Paper 17 battery.</p>
+  <p class="seealso">See also <a href="#obsreq">Observer Requirements</a>;
+  <a href="#failmodes">Failure Modes</a>; <a href="#batteries">Measurement Batteries</a>;
+  <a href="#tuner">RPCS-1 Agent Tuner</a>.</p>
+</article>
+
+<article id="tuner">
+  <h2>RPCS-1 Agent Tuner <span class="chips"><span class="chip cS">Shipping software</span></span></h2>
+  <div class="meta">rpcs1.dev · MCP server + SDK · MIT licensed</div>
+  <p class="lede">The programme's applied wedge: a deterministic tool that maps a task
+  environment's coordinates onto language-model runtime parameters (temperature, sampling,
+  token budgets, context strategy) through the receiver-primitive profile, positioned against
+  the oscillation/overload/freeze failure modes. Benchmarking of its token-savings claim is
+  reported with the measured mechanism attached: savings are driven principally by the
+  TI-derived token ceiling, so they are always reported alongside truncation rates rather
+  than as free efficiency.</p>
+  <p class="seealso">See also <a href="#failmodes">Failure Modes</a>;
+  <a href="#rpcs1">RPCS-1 Receiver Primitives</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-S">S</div>
+
+<article id="smith">
+  <h2>Smith Chart for RH <span class="chips"><span class="chip cS">See main article</span></span></h2>
+  <div class="meta">Cross-reference</div>
+  <p><i>See</i> <a href="#lichart">Li Criterion and the RH Chart</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-T">T</div>
+
+<article id="theta">
+  <h2>Θ<sub>ω</sub> Inner-Function Gauge <span class="chips"><span class="chip cT">Object: established (Suzuki)</span><span class="chip cS">Gauge law: measured</span></span></h2>
+  <div class="meta">After Suzuki, arXiv:1204.1827 · implemented in the RH chart; secondary arm of E-LI-1b</div>
+  <p class="lede">The family Θ<sub>ω</sub>(z) = ξ(½−ω−iz)/ξ(½+ω−iz), whose meromorphic
+  innerness in the upper half-plane Suzuki tied directly to RH, with explicit canonical
+  systems constructed unconditionally for ω &gt; 1. In network terms Θ<sub>ω</sub> is an
+  all-pass filter: unconditionally unimodular on the real axis, with RH governing the absence
+  of poles above it. Implemented as a truncated Blaschke product over the charted zeros, it
+  serves as the instrument's third meter.</p>
+  <p>E-LI-1b measured its detection law and thereby corrected the registered prediction: the
+  gauge fires precisely when ε − ω ≥ v — the planted pole must reach the probe line — a rule
+  matching 72 of 72 configurations with no false alarms. The gauge is therefore local in both
+  probe coordinates, unlike the two global meters.</p>
+  <p class="seealso">See also <a href="#lichart">Li Criterion and the RH Chart</a>;
+  <a href="#eseries">E-Series Protocols</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-W">W</div>
+
+<article id="weil">
+  <h2>Weil Positivity <span class="chips"><span class="chip cO">The open frontier · credited</span></span></h2>
+  <div class="meta">Connes; Connes–Consani (arXiv:2006.13771); Connes–Consani–Moscovici (arXiv:2511.22755)</div>
+  <p class="lede">The genuinely open RH-equivalent statement toward which the programme's
+  number-theoretic line points: positivity of the Weil explicit-formula functional on the
+  cokernel of the fibre-summation map — equivalently, positive-definiteness of the truncated
+  sequence A(m) at all windows and scales, whose boundedness alone is already equivalent to
+  RH by von Koch's estimate. The archimedean part was proved by Connes and Consani (2021);
+  the operator-theoretic frontier is the zeta spectral triples programme (2025).</p>
+  <p>The encyclopedia records this entry to fix attribution: the deep mathematics here is not
+  IMM's; the programme's contribution is instrumentation of the truncations and the graded
+  dictionary connecting them to network-theoretic positivity.</p>
+  <p class="seealso">See also <a href="#am">A(m) Toeplitz Sequence</a>;
+  <a href="#himm">H<sub>IMM</sub> Operator</a>; <a href="#rps">Regulated-Positivity Schema</a>.</p>
+</article>
+
+<div class="letterhead" id="sec-Y">Y</div>
+
+<article id="ym">
+  <h2>Yang–Mills Mass Gap (Paper 15) <span class="chips"><span class="chip cO">At its own stated labels</span></span></h2>
+  <div class="meta">Paper 15 of the open series</div>
+  <p class="lede">The programme's engagement with the Yang–Mills mass-gap problem, developed
+  under the same ledger discipline as the RH line and connected to it through the
+  <a href="#rps">Regulated-Positivity Schema</a>: Osterwalder–Schrader reflection positivity
+  surviving regulator removal as the Yang–Mills instance of the shared template. The paper's
+  claims stand at their own printed labels; no solution to the Millennium problem is claimed,
+  and the schema connection is held at hypothesis grade pending its registered test.</p>
+  <p class="seealso">See also <a href="#rps">Regulated-Positivity Schema</a>;
+  <a href="#ledger">Claim Ledger</a>.</p>
+</article>
+
+</main>
+
+<div class="foot">
+  THE IMM ENCYCLOPEDIA · First edition, 16 July 2026 · Entries follow the status vocabulary of
+  Paper 0B (Claim Ledger) · Series concept DOI 10.5281/zenodo.19697792 · Live instruments:
+  <a href="https://travisbergen2.github.io/rh-smith-chart/" target="_blank" rel="noopener noreferrer">the RH Smith Chart</a> ·
+  rpcs1.dev · Errors in these entries are themselves ledgerable: corrections welcome.
+</div>
+
+</body>
+</html>
