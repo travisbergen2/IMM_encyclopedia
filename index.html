@@ -816,13 +816,21 @@
 
 <div class="frontmatter" style="max-width:980px">
   <p><b>The knowledge structure, drawn.</b> Nodes are encyclopedia entries; arrows point from
-  a claim to what it <i>depends on</i>. Colour follows the status legend. Edges are
-  hand-curated from the deposited papers' own status maps — this graph is documentation,
-  not automation. Reading it backwards from any node shows what would need revision if that
-  node fell; the most load-bearing nodes are the ones with the most incoming arrows.
-  Drag nodes; click one to open its article.</p>
+  a claim to what it <i>depends on</i>. <b>Fill colour is load</b>: a heat gradient from parchment (nothing rests
+  on it) to deep red (many claims transitively depend on it) — computed as the count of
+  transitive dependents in the curated edge list, pure graph arithmetic, no new judgment.
+  The thin ring keeps the status colour from the legend. Edges are hand-curated from the
+  deposited papers' own status maps — documentation, not automation. If a hot node fell,
+  everything upstream of the arrows into it would need revision. Hover for the count;
+  drag nodes; click one to open its article.</p>
 </div>
 <div id="depgraph" style="max-width:980px;margin:0 auto;height:560px;border:1px solid var(--rule);border-radius:6px"></div>
+<div style="max-width:980px;margin:8px auto 0;font-family:Inter,sans-serif;font-size:11.5px;color:#6f6a61;display:flex;align-items:center;gap:10px;justify-content:center">
+  <span>load: none</span>
+  <span style="display:inline-block;width:180px;height:10px;border-radius:5px;background:linear-gradient(90deg,#ece5d8,#e3b04b,#c96a2b,#7a1f1a);border:1px solid #d8d5cf"></span>
+  <span>most load-bearing</span>
+  <span style="margin-left:14px">ring colour = status</span>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script>
@@ -886,6 +894,20 @@ const LINKS = [
  ["Yang-Mills (P15)","Projection axioms (0A)"]
 ];
 const COL = {T:"#2c5a2e", S:"#14406e", C:"#7a5a12", O:"#777", F:"#8c2f28", N:"#5a3b7a"};
+// ---- load = transitive dependents (who relies on me), from curated edges ----
+const depsOf = {};       // node -> set of things it depends on
+NODES.forEach(n=>depsOf[n.id]=new Set());
+LINKS.forEach(([s,t])=>depsOf[s].add(t));
+// transitive closure
+let changed = true;
+while(changed){ changed=false;
+  for(const n of NODES){ const d=depsOf[n.id];
+    for(const t of [...d]) for(const u of depsOf[t]) if(!d.has(u)){d.add(u);changed=true;} } }
+const load = {}; NODES.forEach(n=>load[n.id]=0);
+for(const n of NODES) for(const t of depsOf[n.id]) load[t]++;
+const maxLoad = Math.max(...Object.values(load));
+const heat = t => d3.interpolateRgbBasis(["#ece5d8","#e3b04b","#c96a2b","#7a1f1a"])(t);
+NODES.forEach(n=>{ n.load = load[n.id]; n.fill = heat(maxLoad? n.load/maxLoad : 0); });
 const el = document.getElementById("depgraph");
 const W = el.clientWidth, H = 560;
 const svg = d3.select("#depgraph").append("svg").attr("width","100%").attr("height",H)
@@ -907,7 +929,10 @@ const node = svg.append("g").selectAll("g").data(NODES).join("g")
     .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y;})
     .on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null;}))
   .on("click",(e,d)=>{location.hash=d.href;});
-node.append("circle").attr("r",7).attr("fill",d=>COL[d.c]).attr("stroke","#fff").attr("stroke-width",1.5);
+node.append("circle")
+  .attr("r",d=>7+7*Math.sqrt(maxLoad? d.load/maxLoad:0))
+  .attr("fill",d=>d.fill).attr("stroke",d=>COL[d.c]).attr("stroke-width",2.2);
+node.append("title").text(d=>d.id+" — "+d.load+" claim(s) transitively depend on this");
 node.append("text").text(d=>d.id).attr("x",10).attr("y",4)
   .style("font-family","Inter,sans-serif").style("font-size","10.5px").style("fill","#444");
 sim.on("tick",()=>{
