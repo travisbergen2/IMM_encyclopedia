@@ -288,6 +288,11 @@
     <tr><td>E-LI-1b</td><td>Re-registered with mass-matched nulls, powered grid, Θ<sub>ω</sub> arm</td><td><b>TOEPLITZ WINS</b> (11/12 resolved, all gates passed)</td></tr>
     <tr><td>E-SCHEMA-1</td><td>Test of the regulated-positivity schema</td><td>Registered; design stage</td></tr>
     <tr><td>ISO-2</td><td>Cross-substrate isomorphism in rebuilt coordinates</td><td>Registered; design stage</td></tr>
+    <tr><td>E-EA-OR-1</td><td>Is the price level regime-switching? (three-arm receiver test)</td><td>INVALID at detector-sanity gate on 7/7 instruments — scale-invariant alarm storm; level process not piecewise-regime</td></tr>
+    <tr><td>E-EA-OR-2</td><td>Do detection-gated resets improve variance forecasts?</td><td><b>Powered FAIL</b> — resets lose to fixed EWMA-33 (median QLIKE −2.95%, n = 28, MDE ≈ 1.3%); events detectable, resets valueless</td></tr>
+    <tr><td>E-EA-OR-3</td><td>Does the span-matching law α* = √(q/R) predict optimal spans?</td><td>INVALID at synthetic gate — q/R estimator information-limited at ~10k bars; law untested, not failed</td></tr>
+    <tr><td>E-EA-J6-1</td><td>Maladaptation-gradient proxies → conditional return structure</td><td>T1 pass via vol term structure only, at the Bonferroni boundary (= documented crash-insurance premium); funding direction FALSIFIED; surplus predictions mostly failed</td></tr>
+    <tr><td>E-EA-J6-2</td><td>Super-additive positioning×vol-panic interaction, out-of-time</td><td>Registered 2026-07-17; holdout accruing (unlock ≥15 joint episodes or 2029-07-17)</td></tr>
   </table>
   <p class="seealso">See also <a href="#ledger">Claim Ledger</a>;
   <a href="#retired">Retired and Falsified Claims</a>.</p>
@@ -435,7 +440,7 @@
   <p class="lede">Li's criterion (1997) rests on the Möbius map z = 1 − 1/s, which sends the
   critical line to the unit circle: RH is exactly the statement that every nontrivial zero's
   image lies on the rim, and the Li coefficients λ<sub>n</sub> = Σ(1 − z<sub>ρ</sub><sup>n</sup>)
-  are power sums of the charted zeros. Paper 18 assembles this with the classical Smith chart
+  are power sums of the charted zeros. Paper 19 assembles this with the classical Smith chart
   of radio-frequency engineering — the identical Cayley fold of positive-real impedances into
   the disk — into a graded dictionary and a working, tested instrument with three positivity
   meters (λ<sub>n</sub>, the <a href="#am">A(m) Toeplitz gauge</a>, and the
@@ -451,6 +456,39 @@
 </article>
 
 <div class="letterhead" id="sec-M">M</div>
+
+<article id="marketenv">
+  <h2>Market as Receiver Environment <span class="chips"><span class="chip cN">Two powered negative results</span><span class="chip cS">Boundary class: measured, preliminary</span></span></h2>
+  <div class="meta">Paper 20, “The Market as Receiver Environment” (draft v0.2, pre-referee; not yet deposited) · supersedes the environment treatment of Paper 12 · protocols E-EA-OR-1/OR-2/OR-3, E-EA-J6-1</div>
+  <p class="lede">Paper 12 <em>assumed</em> markets belong to the regime-switching environment
+  class — the class in which the detection-gated strong matching laws earn their exponents.
+  Paper 20 replaces the assumption with pre-registered measurement, and the assumption fails
+  twice. <strong>First negative:</strong> at the price level, a change detector that passes
+  its synthetic gate cleanly alarms at a scale-invariant storm rate (≈0.16/bar at 1m, 15m,
+  and 1h, seven instruments) — the signature of drift/random-walk structure, not discrete
+  regimes; the protocol closed INVALID at its own gate and no comparative endpoint was ever
+  computed. <strong>Second negative (powered):</strong> the volatility process does contain
+  sparse, jump-like events — the programme's first regime-structure gate pass — but
+  detection-gated estimator resets <em>reduce</em> forecast quality against a fixed-span
+  EWMA (median QLIKE −2.95%, n = 28 cells, MDE ≈ 1.3%), and hurt most precisely where the
+  strong law predicts they help. Detectable does not mean exploitable.</p>
+  <p>The placement that survives is a <em>boundary class</em>: sparse detectable events
+  superimposed on persistent, cascade-like dynamics, where the fixed-rate law family applies
+  and the detection-gated strong laws do not — the out-of-class degradation that T-OR-1
+  itself predicts, so the market enters the Isomorphism programme as its degraded/boundary
+  control, not a third regime-class substrate. The ecology line (maladaptation-gradient,
+  E-EA-J6-1) fared little better: two of three mismatch-proxy families failed, one with its
+  frozen direction falsified outright (crypto funding extremes continue, they do not revert),
+  and the one pass — vol term structure, at the Bonferroni boundary — replicates the
+  documented crash-insurance premium rather than adding framework surplus. The sole surviving
+  surplus is an exploratory super-additive positioning×vol-panic interaction, now frozen as
+  its own out-of-time test (E-EA-J6-2, registered 2026-07-17). The paper claims no market
+  edge; variance forecastability is not return predictability; nothing here bears on the
+  Riemann Hypothesis.</p>
+  <p class="seealso">See also <a href="#eseries">E-Series Protocols</a>;
+  <a href="#eor">E-OR Environment Chart</a>; <a href="#obsreq">Observer Requirements</a>;
+  <a href="#market">Market Entity</a>; <a href="#mlarch">ML Architecture as Receiver Design Pattern</a>.</p>
+</article>
 
 <article id="market">
   <h2>Market Entity <span class="chips"><span class="chip cN">Negative result · published as such</span></span></h2>
@@ -469,7 +507,8 @@
   because published negative results are the cheapest available proof that the grading system
   is real.</p>
   <p class="seealso">See also <a href="#eseries">E-Series Protocols</a>;
-  <a href="#rpcs1">RPCS-1 Receiver Primitives</a>.</p>
+  <a href="#rpcs1">RPCS-1 Receiver Primitives</a>;
+  <a href="#marketenv">Market as Receiver Environment</a>.</p>
 </article>
 
 
